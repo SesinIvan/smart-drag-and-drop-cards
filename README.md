@@ -1,6 +1,6 @@
 # Swappable Drag And Drop Cards
 
-My expirmental asset to add mechanics for transferring cards within a single field (a battlefield or a player's hand)
+My expirmental asset for **Godot 4.x** to add mechanics for transferring cards within a single field (a battlefield or a player's hand)
 
 ## Background
 While playing Hearthstone Battlegrounds, I noticed that the character affects the leftmost card in the hand, but it is impossible to change the location of cards in the hand, although it can be done on the field.
