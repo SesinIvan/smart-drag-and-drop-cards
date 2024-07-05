@@ -1,4 +1,4 @@
-# Swappable Drag And Drop Cards
+# Relocatable Drag And Drop Cards
 
 My expirmental asset for **Godot 4.x** to add mechanics for transferring cards within a single field (a battlefield or a player's hand)
 
@@ -7,7 +7,7 @@ While playing Hearthstone Battlegrounds, I noticed that the character affects th
 
 I decided to implement the mechanics of moving cards in the hand, because in other card games like Magic: The Gathering or Heartstone and in Godot Asset Store there is no such function. 
 
-As a result, it turned out to create not so much a "special hand" as a universal field with swappable card mechanics.
+As a result, it turned out to create not so much a "special hand" as a universal field with relocatable card mechanics.
 
 ## How It Works
 I took a cool [tutorial](https://youtu.be/Pa0P1lUoC-M?si=Uy0jS18My5LJzYid) on creating cards and moving them around as a basis.
