@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://biim2lxri0akl"]
+
+[ext_resource type="Script" path="res://field/field.gd" id="1_7p7dw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crh71"]
+size = Vector2(210, 148)
+
+[node name="Field" type="MarginContainer"]
+anchors_preset = -1
+anchor_right = 0.364583
+anchor_bottom = 0.228395
+script = ExtResource("1_7p7dw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.278431)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Name"
+
+[node name="CardsHolder" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="CardDropAreaRight" type="Area2D" parent="."]
+position = Vector2(210, 0)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropAreaRight"]
+position = Vector2(106, 74)
+shape = SubResource("RectangleShape2D_crh71")
+
+[node name="CardDropAreaLeft" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropAreaLeft"]
+position = Vector2(106, 74)
+shape = SubResource("RectangleShape2D_crh71")

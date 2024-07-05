@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://3trgkf0u68ry"]
+
+[ext_resource type="Script" path="res://card/card.gd" id="1_gelhr"]
+[ext_resource type="Script" path="res://card/state_machine/card_state_machine.gd" id="2_vqdgh"]
+[ext_resource type="Script" path="res://card/state_machine/states/idle_card_state.gd" id="3_bx54l"]
+[ext_resource type="Script" path="res://card/state_machine/states/clicked_card_state.gd" id="4_2bop5"]
+[ext_resource type="Script" path="res://card/state_machine/states/drag_card_state.gd" id="5_f7w2d"]
+[ext_resource type="Script" path="res://card/state_machine/states/release_card_state.gd" id="6_r0y7t"]
+[ext_resource type="Script" path="res://card/state_machine/states/hover_card_state.gd" id="7_xjssr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwet6"]
+size = Vector2(100, 150)
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+script = ExtResource("1_gelhr")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="NameLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 26.5
+offset_right = 73.5
+offset_bottom = 23.0
+text = "Name"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "State"
+
+[node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_vqdgh")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="CardStateMachine" node_paths=PackedStringArray("card")]
+script = ExtResource("3_bx54l")
+card = NodePath("../..")
+
+[node name="Click" type="Node" parent="CardStateMachine" node_paths=PackedStringArray("card")]
+script = ExtResource("4_2bop5")
+card = NodePath("../..")
+
+[node name="Drag" type="Node" parent="CardStateMachine" node_paths=PackedStringArray("card")]
+script = ExtResource("5_f7w2d")
+card = NodePath("../..")
+
+[node name="Release" type="Node" parent="CardStateMachine" node_paths=PackedStringArray("card")]
+script = ExtResource("6_r0y7t")
+card = NodePath("../..")
+
+[node name="Hover" type="Node" parent="CardStateMachine" node_paths=PackedStringArray("card")]
+script = ExtResource("7_xjssr")
+card = NodePath("../..")
+
+[node name="DropPointDetector" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+position = Vector2(50, 75)
+shape = SubResource("RectangleShape2D_gwet6")
+
+[node name="CardsDetector" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardsDetector"]
+position = Vector2(50, 75)
+shape = SubResource("RectangleShape2D_gwet6")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
