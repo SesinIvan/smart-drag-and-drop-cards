@@ -49,3 +49,8 @@ When a card enters the Release state, its location is checked:
 - If a card is located in a field and this is a new field for it, then it changes its home field and is placed in the field using the set_new_card() function of the new field.
 
 ## Current Status
+So far I have implemented everything I wanted within this program. Cards move between fields and take positions depending on its position.
+
+No bugs causing crashes and errors were found.
+
+I use this project for the basis of my 2 projects (game and utility programm).
