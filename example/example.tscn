@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://buh3412b0qtpp"]
 
-[ext_resource type="PackedScene" uid="uid://3trgkf0u68ry" path="res://card/card.tscn" id="2_156ft"]
-[ext_resource type="PackedScene" uid="uid://biim2lxri0akl" path="res://field/field.tscn" id="3_thvfg"]
+[ext_resource type="PackedScene" uid="uid://biim2lxri0akl" path="res://example/field/field.tscn" id="1_fkhir"]
+[ext_resource type="PackedScene" uid="uid://3trgkf0u68ry" path="res://example/card/card.tscn" id="2_5f2as"]
 
 [node name="Game" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["fields"]]
 
-[node name="Field1" parent="CanvasLayer" instance=ExtResource("3_thvfg")]
+[node name="Field1" parent="CanvasLayer" instance=ExtResource("1_fkhir")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -20,16 +20,16 @@ offset_bottom = -423.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Card" parent="CanvasLayer/Field1/CardsHolder" index="0" instance=ExtResource("2_156ft")]
+[node name="Card" parent="CanvasLayer/Field1/CardsHolder" index="0" instance=ExtResource("2_5f2as")]
 layout_mode = 2
 
-[node name="Card2" parent="CanvasLayer/Field1/CardsHolder" index="1" instance=ExtResource("2_156ft")]
+[node name="Card2" parent="CanvasLayer/Field1/CardsHolder" index="1" instance=ExtResource("2_5f2as")]
 layout_mode = 2
 
-[node name="Card3" parent="CanvasLayer/Field1/CardsHolder" index="2" instance=ExtResource("2_156ft")]
+[node name="Card3" parent="CanvasLayer/Field1/CardsHolder" index="2" instance=ExtResource("2_5f2as")]
 layout_mode = 2
 
-[node name="Field2" parent="CanvasLayer" instance=ExtResource("3_thvfg")]
+[node name="Field2" parent="CanvasLayer" instance=ExtResource("1_fkhir")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

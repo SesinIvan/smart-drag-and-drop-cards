@@ -7,7 +7,6 @@ func _enter():
 	
 	card.index = card.get_index()
 	
-	#
 	var canvas_layer := get_tree().get_first_node_in_group("fields")
 	if canvas_layer:
 		card.reparent(canvas_layer)
