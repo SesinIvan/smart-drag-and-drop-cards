@@ -3,6 +3,7 @@
 My experimental asset for **Godot 4.x** to add mechanics for transferring cards within a single field (a battlefield or a player's hand)
 
 ![Gif of cards being moved inside the field](https://raw.githubusercontent.com/SesinIvan/relocatable-drag-and-drop-cards/main/dnd_replace_in_field.gif)
+![Gif of cards being moved form field to field](https://raw.githubusercontent.com/SesinIvan/relocatable-drag-and-drop-cards/main/dnd_from_field_to_field.gif)
 
 ## Background
 While playing Hearthstone Battlegrounds, I noticed that the character affects the leftmost card in the hand, but it is impossible to change the location of cards in the hand, although it can be done on the field.
