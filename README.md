@@ -1,4 +1,4 @@
-# Relocatable Drag and Drop Cards
+# Smart Drag and Drop Cards
 
 My experimental asset for **Godot 4.x** to add mechanics for transferring cards within a single field (a battlefield or a player's hand)
 
